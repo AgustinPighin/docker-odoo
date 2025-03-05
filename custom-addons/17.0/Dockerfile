@@ -1,4 +1,4 @@
-FROM testodoo-17:latest
+FROM odoopy10_base:17
 MAINTAINER Agustin Pighin <agustinpighin@gmail.com>
 
 USER root
