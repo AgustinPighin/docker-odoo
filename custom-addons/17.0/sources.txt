@@ -1,10 +1,8 @@
 https://github.com/ingadhoc/odoo-argentina -b 17.0, ingadhoc-odoo-argentina
-https://github.com/ingadhoc/argentina-reporting -b 17.0, ingadhoc-argentina-reporting
 https://github.com/ingadhoc/argentina-sale -b 17.0, ingadhoc-argentina-sale
 https://github.com/ingadhoc/product -b 17.0, ingadhoc-product
 https://github.com/ingadhoc/stock -b 17.0, ingadhoc-stock
 https://github.com/ingadhoc/aeroo_reports -b 17.0, ingadhoc-aeroo-reports
-https://github.com/ingadhoc/account-analytic -b 17.0, ingadhoc-account-analytic
 https://github.com/ingadhoc/partner -b 17.0, ingadhoc-partner
 https://github.com/ingadhoc/purchase -b 17.0, ingadhoc-purchase
 https://github.com/ingadhoc/crm -b 17.0, ingadhoc-crm
@@ -28,8 +26,10 @@ https://github.com/ingadhoc/odoo-web -b 17.0, ingadhoc-odoo-web
 https://github.com/ingadhoc/website -b 17.0, ingadhoc-website
 https://github.com/ingadhoc/aeroo_reports -b 17.0, ingadhoc-aeroo_reports
 https://github.com/muk-it/odoo-modules.git -b 17.0, muk-odoo
-https://github.com/adhoc-cicd/oca-web.git -b 17.0 oca-web
+https://github.com/adhoc-cicd/oca-web.git -b 17.0, oca-web
 
+#https://github.com/ingadhoc/account-analytic -b 17.0, ingadhoc-account-analytic
+#https://github.com/ingadhoc/argentina-reporting -b 17.0, ingadhoc-argentina-reporting
 #https://github.com/adhoc-cicd/server-tools -b 17.0, oca-server-tools
 #https://github.com/adhoc-cicd/oca-sale-workflow -b 17.0, oca-sale_workflow
 #https://github.com/adhoc-cicd/oca-e-commerce -b 17.0, oca-e-commerce
