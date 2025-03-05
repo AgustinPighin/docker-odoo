@@ -69,6 +69,8 @@
     ENV ODOO_VERSION="$ODOO_VERSION"
     ENV ODOO_SOURCE="$ODOO_SOURCE"
 
+    RUN pip install --no-cache-dir --upgrade Cython
+    
     # Install Odoo hard & soft dependencies, and Doodba utilities
     RUN build_deps=" \
             build-essential \
