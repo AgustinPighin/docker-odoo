@@ -1,4 +1,4 @@
-    FROM python:3.10-slim-bullseye
+    FROM python:3.11-slim-bullseye
 
     EXPOSE 8069 8072
 
@@ -37,10 +37,11 @@
     RUN apt-get -qq update \
         && apt-get install -yqq --no-install-recommends \
             curl \
-        && curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_${WKHTMLTOPDF_VERSION}-1.stretch_amd64.deb \
-        && echo "${WKHTMLTOPDF_CHECKSUM}  wkhtmltox.deb" | sha256sum -c - \
-        && apt-get install -yqq --no-install-recommends \
-            ./wkhtmltox.deb \
+#        && curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_${WKHTMLTOPDF_VERSION}-1.stretch_amd64.deb \
+#        && echo "${WKHTMLTOPDF_CHECKSUM}  wkhtmltox.deb" | sha256sum -c - \
+#        && apt-get install -yqq --no-install-recommends \
+#            ./wkhtmltox.deb \
+            wkhtmltopdf \
             chromium \
             ffmpeg \
             fonts-liberation2 \
@@ -91,8 +92,8 @@
         && apt-get install -yqq --no-install-recommends $build_deps \
         && wget https://raw.githubusercontent.com/$ODOO_SOURCE/$ODOO_VERSION/requirements.txt \
         # Issue: https://github.com/odoo/odoo/issues/187021
-        && sed -i "s/gevent==21\.8\.0 ; sys_platform != 'win32' and python_version == '3\.10'  # (Jammy)/gevent==21.12.0 ; sys_platform != 'win32' and python_version == '3.10'  # (Jammy)/" requirements.txt \
-        && sed -i "s/geoip2==2\.9\.0/geoip2==4.6.0/" requirements.txt \
+#        && sed -i "s/gevent==21\.8\.0 ; sys_platform != 'win32' and python_version == '3\.11'  # (Jammy)/gevent==21.12.0 ; sys_platform != 'win32' and python_version == '3.11'  # (Jammy)/" requirements.txt \
+#        && sed -i "s/geoip2==2\.9\.0/geoip2==4.6.0/" requirements.txt \
         # End Issue
         && pip install --no-cache-dir \
             -r requirements.txt \
@@ -106,7 +107,7 @@
             click-odoo-contrib==1.16.1 \
             pg-activity==3.0.1 \
             phonenumbers==8.13.1 \
-        && (python3 -m compileall -q /usr/local/lib/python3.10/ || true) \
+        && (python3 -m compileall -q /usr/local/lib/python3.11/ || true) \
         && rm requirements.txt \
         && apt-get purge -yqq $build_deps \
         && apt-get autopurge -yqq \
@@ -161,6 +162,23 @@
 
     # Run build scripts
     RUN $RESOURCES/build && sync
+
+# Actualizar sistema e instalar dependencias requeridas por Odoo
+    RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+        software-properties-common \
+        python3-babel python3-chardet python3-cryptography python3-dateutil python3-decorator \
+        python3-docutils python3-geoip2 python3-gevent python3-greenlet python3-idna \
+        python3-jinja2 python3-libsass python3-lxml python3-markupsafe python3-num2words \
+        python3-ofxparse python3-openssl python3-passlib python3-pil python3-polib \
+        python3-psutil python3-psycopg2 python3-pydot python3-pypdf2 python3-qrcode \
+        python3-reportlab python3-requests python3-rjsmin python3-serial python3-stdnum \
+        python3-tz python3-urllib3 python3-usb python3-vobject python3-werkzeug python3-xlrd \
+        python3-xlsxwriter python3-xlwt python3-zeep \
+        fonts-dejavu-core fonts-freefont-ttf fonts-freefont-otf fonts-noto-core \
+        fonts-inconsolata fonts-font-awesome fonts-roboto-unhinted gsfonts \
+        libjs-underscore python3-freezegun python3-renderpm \
+        curl git wget nano unzip sudo \
+        && apt-get clean && rm -rf /var/lib/apt/lists/*
 
     # Custom packages
     RUN apt-get update \
@@ -265,12 +283,12 @@
 
     # GEOIP (key generada con user devops@adhoc.com.ar, en Bitwarden > Infraestructura)
     # Si falla la descarga (Build failed en dockerhub, generar un nuevo token en https://www.maxmind.com/ y reemplazar en variables de dockerhub)
-    ARG MAXMIND_LICENSE_KEY=default
-    RUN cd $RESOURCES/GeoIP \
-        && curl -L -u 1011117:${MAXMIND_LICENSE_KEY} "https://download.maxmind.com/geoip/databases/GeoLite2-City/download?suffix=tar.gz" -o $RESOURCES/GeoIP/GeoLite2-City.tar.gz \
-        && tar -xzf $RESOURCES/GeoIP/GeoLite2-City.tar.gz -C $RESOURCES/GeoIP \
-        && find $RESOURCES/GeoIP/GeoLite2-City_* | grep "GeoLite2-City.mmdb" | xargs -I{} mv {} $RESOURCES/GeoIP \
-        && rm $RESOURCES/GeoIP/GeoLite2-City.tar.gz
+    #ARG MAXMIND_LICENSE_KEY=default
+    #RUN cd $RESOURCES/GeoIP \
+    #    && curl -L -u 1011117:${MAXMIND_LICENSE_KEY} "https://download.maxmind.com/geoip/databases/GeoLite2-City/download?suffix=tar.gz" -o $RESOURCES/GeoIP/GeoLite2-City.tar.gz \
+    #    && tar -xzf $RESOURCES/GeoIP/GeoLite2-City.tar.gz -C $RESOURCES/GeoIP \
+    #    && find $RESOURCES/GeoIP/GeoLite2-City_* | grep "GeoLite2-City.mmdb" | xargs -I{} mv {} $RESOURCES/GeoIP \
+    #    && rm $RESOURCES/GeoIP/GeoLite2-City.tar.gz
 
     # UNRAR para padron agip
     RUN echo "export UNRAR_LIB_PATH='/usr/lib/libunrar.so'" >> /home/odoo/.bashrc
@@ -282,3 +300,13 @@
     ENTRYPOINT ["/home/odoo/.resources/entrypoint.sh"]
     CMD ["odoo"]
     USER odoo
+
+# HACK Special case for Werkzeug
+    RUN pip install --user Werkzeug==0.14.1
+
+#
+#   Odoo
+#
+    COPY odoo.yml $RESOURCES/
+    RUN autoaggregate --config "$RESOURCES/odoo.yml" --install --output $SOURCES
+    RUN pip install --user --no-cache-dir $SOURCES/odoo
