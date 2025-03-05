@@ -1,4 +1,5 @@
 https://github.com/ingadhoc/odoo-argentina -b 17.0, ingadhoc-odoo-argentina
+https://github.com/ingadhoc/odoo-argentina-ce -b 17.0, ingadhoc-odoo-argentina-ce
 https://github.com/ingadhoc/argentina-sale -b 17.0, ingadhoc-argentina-sale
 https://github.com/ingadhoc/product -b 17.0, ingadhoc-product
 https://github.com/ingadhoc/stock -b 17.0, ingadhoc-stock
