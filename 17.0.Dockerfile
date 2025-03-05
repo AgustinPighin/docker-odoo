@@ -305,7 +305,7 @@
     RUN pip install --user Werkzeug==0.14.1
 
 #
-#   Odoo
+#   Odoo test
 #
     COPY odoo.yml $RESOURCES/
     RUN autoaggregate --config "$RESOURCES/odoo.yml" --install --output $SOURCES
