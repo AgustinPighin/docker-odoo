@@ -23,20 +23,24 @@ https://github.com/ingadhoc/demo -b 17.0, ingadhoc-demo
 https://github.com/ingadhoc/odoo-public-administration -b 17.0, ingadhoc-odoo-public-administration
 https://github.com/ingadhoc/odoo-academic -b 17.0, ingadhoc-odoo-academic
 https://github.com/ingadhoc/odoo-web -b 17.0, ingadhoc-odoo-web
-https://github.com/ingadhoc/website -b 17.0, ingadhoc-website
 https://github.com/ingadhoc/aeroo_reports -b 17.0, ingadhoc-aeroo_reports
 https://github.com/muk-it/odoo-modules.git -b 17.0, muk-odoo
 https://github.com/adhoc-cicd/oca-web.git -b 17.0, oca-web
+https://github.com/adhoc-cicd/oca-sale-workflow -b 17.0, oca-sale_workflow
+https://github.com/adhoc-cicd/oca-stock-logistics-availability -b 17.0, oca-stock-logistics-availability
+https://github.com/adhoc-cicd/oca-stock-logistics-workflow -b 17.0, oca-stock-logistics-workflow
+https://github.com/adhoc-cicd/oca-purchase-workflow -b 17.0, oca-purchase-workflow
+https://github.com/adhoc-cicd/oca-stock-logistics-request -b 17.0, oca-stock-logistics-request
+https://github.com/adhoc-cicd/oca-stock-logistics-warehouse -b 17.0, oca-stock-logistics-warehouse
+https://github.com/adhoc-cicd/oca-project -b 17.0, oca-project
+
 
 #https://github.com/ingadhoc/account-analytic -b 17.0, ingadhoc-account-analytic
 #https://github.com/ingadhoc/argentina-reporting -b 17.0, ingadhoc-argentina-reporting
 #https://github.com/adhoc-cicd/server-tools -b 17.0, oca-server-tools
-#https://github.com/adhoc-cicd/oca-sale-workflow -b 17.0, oca-sale_workflow
+https://github.com/ingadhoc/website -b 17.0, ingadhoc-website
 #https://github.com/adhoc-cicd/oca-e-commerce -b 17.0, oca-e-commerce
-#https://github.com/adhoc-cicd/oca-purchase-workflow -b 17.0, oca-purchase-workflow
 #https://github.com/adhoc-cicd/oca-server-ux -b 17.0, oca-server-ux
-#https://github.com/adhoc-cicd/oca-stock-logistics-availability -b 17.0, oca-stock-logistics-availability
-#https://github.com/adhoc-cicd/oca-stock-logistics-workflow -b 17.0, oca-stock-logistics-workflow
 #https://github.com/OCA/web -b 17.0, oca-web
 #https://github.com/OCA/purchase-workflow -b 17.0, oca-purchase-workflow
 #https://github.com/OCA/account-financial-tools -b 17.0, oca-account-financial-tools
