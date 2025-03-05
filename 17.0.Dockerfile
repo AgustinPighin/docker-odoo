@@ -310,3 +310,5 @@
     COPY odoo.yml $RESOURCES/
     RUN autoaggregate --config "$RESOURCES/odoo.yml" --install --output $SOURCES
     RUN pip install --user --no-cache-dir $SOURCES/odoo
+
+ # test   
