@@ -69,8 +69,10 @@
     ENV ODOO_VERSION="$ODOO_VERSION"
     ENV ODOO_SOURCE="$ODOO_SOURCE"
 
-    RUN pip install --no-cache-dir --upgrade Cython
-    
+    RUN apt-get update && apt-get install -y libev-dev \
+    && pip install --no-cache-dir --upgrade pip setuptools wheel Cython==0.29.36 \
+    && pip install --no-cache-dir --only-binary :all: "gevent==22.10.2"
+
     # Install Odoo hard & soft dependencies, and Doodba utilities
     RUN build_deps=" \
             build-essential \
