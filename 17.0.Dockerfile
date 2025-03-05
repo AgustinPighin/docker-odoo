@@ -1,4 +1,4 @@
-    FROM python:3.10-slim-bullseye
+    FROM python:3.11-slim-bullseye
 
     EXPOSE 8069 8072
 
@@ -107,7 +107,7 @@
             click-odoo-contrib==1.16.1 \
             pg-activity==3.0.1 \
             phonenumbers==8.13.1 \
-        && (python3 -m compileall -q /usr/local/lib/python3.10/ || true) \
+        && (python3 -m compileall -q /usr/local/lib/python3.11/ || true) \
         && rm requirements.txt \
         && apt-get purge -yqq $build_deps \
         && apt-get autopurge -yqq \
