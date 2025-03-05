@@ -69,10 +69,6 @@
     ENV ODOO_VERSION="$ODOO_VERSION"
     ENV ODOO_SOURCE="$ODOO_SOURCE"
 
-    RUN apt-get update && apt-get install -y libev-dev \
-    && pip install --no-cache-dir --upgrade pip setuptools wheel Cython==0.29.36 \
-    && pip install --no-cache-dir --only-binary :all: "gevent==22.10.2"
-
     # Install Odoo hard & soft dependencies, and Doodba utilities
     RUN build_deps=" \
             build-essential \
@@ -111,7 +107,7 @@
             click-odoo-contrib==1.16.1 \
             pg-activity==3.0.1 \
             phonenumbers==8.13.1 \
-        && (python3 -m compileall -q /usr/local/lib/python3.11/ || true) \
+        && (python3 -m compileall -q /usr/local/lib/python3.10/ || true) \
         && rm requirements.txt \
         && apt-get purge -yqq $build_deps \
         && apt-get autopurge -yqq \
