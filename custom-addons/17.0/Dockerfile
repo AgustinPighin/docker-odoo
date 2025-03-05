@@ -4,6 +4,7 @@ MAINTAINER Agustin Pighin <agustinpighin@gmail.com>
 USER root
 
 #RUN apt-get update  -y 
+RUN apt install -y build-essential python3-dev libssl-dev swig
 #RUN apt-get install -y swig libcups2-dev
 
 # Get repositories & add files
