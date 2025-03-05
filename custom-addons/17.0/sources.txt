@@ -2,6 +2,8 @@ https://github.com/ingadhoc/odoo-argentina -b 17.0, ingadhoc-odoo-argentina
 https://github.com/ingadhoc/argentina-reporting -b 17.0, ingadhoc-argentina-reporting
 https://github.com/ingadhoc/argentina-sale -b 17.0, ingadhoc-argentina-sale
 https://github.com/ingadhoc/product -b 17.0, ingadhoc-product
+https://github.com/ingadhoc/stock -b 17.0, ingadhoc-stock
+https://github.com/ingadhoc/aeroo_reports -b 17.0, ingadhoc-aeroo-reports
 https://github.com/ingadhoc/account-analytic -b 17.0, ingadhoc-account-analytic
 https://github.com/ingadhoc/partner -b 17.0, ingadhoc-partner
 https://github.com/ingadhoc/purchase -b 17.0, ingadhoc-purchase
@@ -13,7 +15,6 @@ https://github.com/ingadhoc/sale -b 17.0, ingadhoc-sale
 https://github.com/ingadhoc/account-invoicing -b 17.0, ingadhoc-account-invoicing
 https://github.com/ingadhoc/reporting-engine -b 17.0, ingadhoc-reporting-engine
 https://github.com/ingadhoc/miscellaneous -b 17.0, ingadhoc-miscellaneous
-https://github.com/ingadhoc/stock -b 17.0, ingadhoc-stock
 https://github.com/ingadhoc/multi-company -b 17.0, ingadhoc-multi-company
 https://github.com/ingadhoc/multi-store -b 17.0, ingadhoc-multi-store
 https://github.com/ingadhoc/project -b 17.0, ingadhoc-project
@@ -25,38 +26,44 @@ https://github.com/ingadhoc/odoo-public-administration -b 17.0, ingadhoc-odoo-pu
 https://github.com/ingadhoc/odoo-academic -b 17.0, ingadhoc-odoo-academic
 https://github.com/ingadhoc/odoo-web -b 17.0, ingadhoc-odoo-web
 https://github.com/ingadhoc/website -b 17.0, ingadhoc-website
-https://github.com/OCA/server-tools -b 17.0, oca-server-tools
-https://github.com/OCA/sale-workflow -b 17.0, oca-sale_workflow
-https://github.com/OCA/purchase-workflow -b 17.0, oca-purchase-workflow
-https://github.com/OCA/account-financial-tools -b 17.0, oca-account-financial-tools
-https://github.com/OCA/account-financial-reporting -b 17.0, oca-account-financial-reporting
-https://github.com/OCA/account-invoicing -b 17.0, oca-account-invoicing
-https://github.com/OCA/reporting-engine -b 17.0, oca-reporting-engine
-https://github.com/OCA/stock-logistics-workflow -b 17.0, oca-stock-logistics-workflow
-https://github.com/OCA/stock-logistics-warehouse -b 17.0, oca-stock-logistics-warehouse
-https://github.com/OCA/knowledge -b 17.0, oca-knowledge
-https://github.com/OCA/manufacture -b 17.0, oca-manufacture
-https://github.com/OCA/crm -b 17.0, oca-crm
-https://github.com/OCA/hr -b 17.0, oca-hr
-https://github.com/OCA/report-print-send -b 17.0, oca-report-print-send
-https://github.com/OCA/social -b 17.0, oca-social
-https://github.com/OCA/account-analytic -b 17.0, oca-account-analytic
-https://github.com/OCA/product-variant -b 17.0, oca-product-variant
-https://github.com/OCA/product-attribute -b 17.0, oca-product-attribute
-https://github.com/OCA/partner-contact -b 17.0, oca-partner-contact
-https://github.com/OCA/management-system -b 17.0, oca-management-system
-https://github.com/OCA/project -b 17.0, oca-project
+https://github.com/ingadhoc/aeroo_reports -b 17.0, ingadhoc-aeroo_reports
 https://github.com/muk-it/odoo-modules.git -b 17.0, muk-odoo
+https://github.com/adhoc-cicd/oca-web.git -b 17.0 oca-web
 
-https://github.com/OCA/website -b 17.0, oca-website
-https://github.com/OCA/web -b 17.0, oca-web
-
+#https://github.com/adhoc-cicd/server-tools -b 17.0, oca-server-tools
+#https://github.com/adhoc-cicd/oca-sale-workflow -b 17.0, oca-sale_workflow
+#https://github.com/adhoc-cicd/oca-e-commerce -b 17.0, oca-e-commerce
+#https://github.com/adhoc-cicd/oca-purchase-workflow -b 17.0, oca-purchase-workflow
+#https://github.com/adhoc-cicd/oca-server-ux -b 17.0, oca-server-ux
+#https://github.com/adhoc-cicd/oca-stock-logistics-availability -b 17.0, oca-stock-logistics-availability
+#https://github.com/adhoc-cicd/oca-stock-logistics-workflow -b 17.0, oca-stock-logistics-workflow
+#https://github.com/OCA/web -b 17.0, oca-web
+#https://github.com/OCA/purchase-workflow -b 17.0, oca-purchase-workflow
+#https://github.com/OCA/account-financial-tools -b 17.0, oca-account-financial-tools
+#https://github.com/OCA/account-financial-reporting -b 17.0, oca-account-financial-reporting
+#https://github.com/OCA/account-invoicing -b 17.0, oca-account-invoicing
+#https://github.com/OCA/reporting-engine -b 17.0, oca-reporting-engine
+#https://github.com/OCA/stock-logistics-workflow -b 17.0, oca-stock-logistics-workflow
+#https://github.com/OCA/stock-logistics-warehouse -b 17.0, oca-stock-logistics-warehouse
+#https://github.com/OCA/knowledge -b 17.0, oca-knowledge
+#https://github.com/OCA/manufacture -b 17.0, oca-manufacture
+#https://github.com/OCA/crm -b 17.0, oca-crm
+#https://github.com/OCA/hr -b 17.0, oca-hr
+#https://github.com/OCA/report-print-send -b 17.0, oca-report-print-send
+#https://github.com/OCA/social -b 17.0, oca-social
+#https://github.com/OCA/account-analytic -b 17.0, oca-account-analytic
+#https://github.com/OCA/product-variant -b 17.0, oca-product-variant
+#https://github.com/OCA/product-attribute -b 17.0, oca-product-attribute
+#https://github.com/OCA/partner-contact -b 17.0, oca-partner-contact
+#https://github.com/OCA/management-system -b 17.0, oca-management-system
+#https://github.com/OCA/project -b 17.0, oca-project
+#https://github.com/OCA/website -b 17.0, oca-website
+#https://github.com/ingadhoc/stock -b 17.0, ingadhoc-stock
 #https://github.com/ingadhoc/odoo-infrastructure -b 17.0, ingadhoc-odoo-infrastructure
-#https://github.com/ingadhoc/aeroo_reports -b 17.0, ingadhoc-aeroo_reports
 #https://github.com/ingadhoc/odoo-support -b 17.0, ingadhoc-odoo-support
 #https://github.com/AgustinPighin/backend_theme_v11.git -b master, backend-theme-v11 
 #https://github.com/AgustinPighin/website_support.git -b master, website_support
-https://github.com/OCA/e-commerce -b 17.0, oca-e-commerce
+#https://github.com/OCA/e-commerce -b 17.0, oca-e-commerce
 # IMPORTANTE! nuestro script no sabe leer comentarios por lo cual todo esto tiene que ir al final si no se corta en el medio
 # NO los usamos mas
 # el rep cost deberiamos llevarlo a patches o no usarlo mas
